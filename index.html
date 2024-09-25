@@ -3,37 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMM Reseller Services</title>
-    <link rel="stylesheet" href="style.css">
+    <title>SMM Reseller Service</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin: 0 0 20px;
+        }
+
+        #services {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #services li {
+            background-color: white;
+            margin: 10px 0;
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        #services li:hover {
+            background-color: #e9ecef;
+        }
+
+        #order-form {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="url"],
+        input[type="number"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Resell Social Media Services</h1>
+    <header>
+        <h1>SMM Reseller Service</h1>
+    </header>
+    
+    <ul id="services"></ul> <!-- List of services will be populated here -->
 
-    <!-- Section to display available services -->
-    <div id="service-list">
-        <h2>Choose a Service</h2>
-        <ul id="services"></ul>
-    </div>
-
-    <!-- Order form that appears when a service is selected -->
-    <div id="order-form" style="display:none;">
-        <h2>Place an Order</h2>
-        <form id="orderForm">
-            <input type="text" id="serviceId" hidden>
+    <div id="order-form" style="display:none;"> <!-- Order form for placing orders -->
+        <h2>Place Your Order</h2>
+        <form>
+            <input type="hidden" id="serviceId"> <!-- Hidden input to store service ID -->
+            <label for="link">Link to page:</label>
+            <input type="url" id="link" required> <!-- Input for the link -->
             <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" min="1" required>
-            <label for="link">Link to the social media post/profile:</label>
-            <input type="url" id="link" required>
-            <button type="submit">Submit Order</button>
+            <input type="number" id="quantity" min="1" required> <!-- Input for quantity -->
+            <button type="submit">Place Order</button> <!-- Submit button -->
         </form>
     </div>
 
-    <!-- Section to display the order status -->
-    <div id="order-status" style="display:none;">
-        <h2>Order Status</h2>
-        <p id="status-message"></p>
-    </div>
-
-    <script src="app.js"></script>
+    <script src="app.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
